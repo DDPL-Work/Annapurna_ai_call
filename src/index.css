@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+  body {
+    background-color: #f7f5f0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(28, 27, 24, 0.035) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  ::selection {
+    background-color: #d7e4dc;
+  }
+  :focus-visible {
+    outline: 2px solid #b8863b;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-line rounded-md;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-sm bg-brand-500 text-white px-4 py-2 text-sm font-medium hover:bg-brand-600 transition-colors disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-sm border border-line bg-surface px-4 py-2 text-sm font-medium text-ink hover:border-brand-500/40 transition-colors;
+  }
+  .input {
+    @apply w-full rounded-sm border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors;
+  }
+  .label {
+    @apply text-sm font-medium text-ink/80 mb-1 block;
+  }
+}
